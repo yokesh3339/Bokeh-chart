@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<script type="text/javascript" src={{ cdn_js | safe }}></script>
+<div>
+    <title>GRAPH</title>
+    <h1 style="color: black;background-color:cornsilk">Bombay Stock Exchange(BSE) GRAPH </h1>
+</div>
+<strong>
+    <h1 style="background-color: blanchedalmond;">
+
+</h1>
+</strong>
+<table>
+    <tr>
+        <td>
+            <img src="{% static 'img/1.png' %}" alt="no_img" width="50" height="40">
+        </td>
+        <td>
+            DECREASING OF SENSEX
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="{% static 'img/2.png' %}" alt="no_img" width="50" height="40">
+        </td>
+        <td>
+             INCREASING OF SENSEX
+        </td>
+    </tr>
+</table>
+{{script1 | safe}}
+{{div1 | safe}}
+{% endblock %}
