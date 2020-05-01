@@ -1,1 +1,1 @@
-web: gunicorn bse.wsgi
+web: gunicorn bse:wsgi
