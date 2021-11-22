@@ -10,8 +10,8 @@ def home(request):
     from bokeh.embed import components
     from bokeh.resources import CDN
     end=datetime.datetime.now()
-    start=datetime.datetime(end.year,end.month-1,end.day)
-    df=data.DataReader(name="BSE",data_source="yahoo",start=start,end=end)
+    start=datetime.datetime(end.year,end.month-1,1)
+    df=data.get_data_yahoo("TSLA",start=start,end=end)
 
     def status_find(a,b):
         if a>b:
@@ -40,7 +40,7 @@ def home(request):
     df['color']=[find(i) for i in df.Status]
     df['st']=df['Date'].dt.strftime("%Y-%m-%d")
     cds=ColumnDataSource(df)
-    f=figure(x_axis_type='datetime',width=1000,height=300,title="BOMBAY STOCK EXCHANGE CHART",sizing_mode='scale_width')
+    f=figure(x_axis_type='datetime',width=1000,height=300,title="TESLA STOCK EXCHANGE CHART",sizing_mode='scale_width')
     f.grid.grid_line_alpha=0.5
     f.title.text_color="red"
     f.title.text_font="arial"
